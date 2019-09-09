@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>无感打卡-大屏</title>
+    <link href="CDN/element-ui@2.8.2.css" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- 内容模块 -->
+    <div  id="app" v-cloak>
+        <div class="container-bg"></div> 
+        <p class="cont-head">无感打卡</p>   
+        <div class="container">
+            <div class="cont-left flex-column">
+                <div class="video-wrap p-20 mb-15">
+                    <canvas id="video-canvas"></canvas>
+                    <!-- <video src="http://vod1.yiihuu.com/vod/video_mp4/8366/71ea01ae78e14c1f1f0d2637eb2c53f4-sd-157745.mp4" width="720" height="405" autoplay="autoplay" controls="controls"></! --> 
+                </div>
+                <div class="user-list relative">
+                    <el-table :data="tableData">
+                        <el-table-column prop="name" label="姓名" ></el-table-column>
+                        <el-table-column prop="jobNum" label="工号" align="center"></el-table-column>
+                        <el-table-column prop="time" label="时间" align="center"></el-table-column>
+                        <el-table-column prop="status" label="状态" align="center"></el-table-column>
+                    </el-table>
+                </div>
+            </div>
+            <div class="cont-right">
+                <div class="head flex-row js">
+                    <ul class="flex-row">
+                        <li ><img src="images/head1.png">识别人数：1282</li>
+                        <li class="ml-50"><img src="images/head2.png">对比成功：1263</li>
+                        <li class="ml-50"><img src="images/head3.png">未注册：19</li>
+                    </ul>
+                    <p>2019.7.30  11:36:41  星期二</p>
+                </div>
+                <div class="user-detail-list flex-row flex-wrap">
+                    <div class="item flex-row ac" v-for="item in userlist">
+                        <div class="i-avatar"><img :src="item.avatar" alt=""></div>
+                        <div class="i-detail">
+                            <ul>
+                                <li>{{item.status}}</li>
+                                <li class="name">{{item.name}}</li>
+                                <li class="job-num">工号：{{item.jobNum}}</li>
+                                <li>顶新人脸库</li>
+                                <li>{{item.time}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="CDN/vue@2.6.10.js"></script>
+    <script src="CDN/element-ui@2.8.2.js"></script>
+    <script src="jsmpeg.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

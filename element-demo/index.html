@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 版本太低，图标不会显示  显示的为空框  比如 element-ui@2.4.0.css-->
+    <link rel="stylesheet" href="element-ui@2.8.2.css">
+</head>
+<body>
+    <div id="app">
+        <el-row>
+            <el-button icon="el-icon-search" circle></el-button>
+            <el-button type="primary" icon="el-icon-edit" circle></el-button>
+            <el-button type="success" icon="el-icon-check" circle></el-button>
+            <el-button type="info" icon="el-icon-message" circle></el-button>
+            <el-button type="warning" icon="el-icon-star-off" circle></el-button>
+            <el-button type="danger" icon="el-icon-delete" circle></el-button>
+        </el-row>
+    </div>
+    
+    <script src="vue@2.6.10.js"></script>
+    <!-- 引入组件库 -->
+    <script src="element-ui@2.8.2.js"></script>
+    <script>
+        new Vue({
+          el: '#app',
+          data: function() {
+            return { visible: false }
+          }
+        })
+      </script>
+</body>
+</html>
